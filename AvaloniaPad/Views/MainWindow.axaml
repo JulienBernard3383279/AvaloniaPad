@@ -16,13 +16,13 @@
     </Design.DataContext>
 
   <StackPanel Orientation="Vertical">
-    <DataGrid Name="MyDataGrid" Items="{Binding Lines}">
+    <DataGrid Name="MyDataGrid" ItemsSource="{Binding Lines}">
       <DataGrid.Columns>
         <DataGridTextColumn Header="Index" Binding="{Binding Index}" IsReadOnly="True" Width="*"/>
         <DataGridTemplateColumn Header="Option" Width="*">
           <DataGridTemplateColumn.CellTemplate>
             <DataTemplate>
-              <ComboBox Items="{Binding Option}" SelectedIndex="{Binding Index}"/>
+              <ComboBox ItemsSource="{Binding Option}" SelectedIndex="{Binding Index}"/>
             </DataTemplate>
           </DataGridTemplateColumn.CellTemplate>
         </DataGridTemplateColumn>
