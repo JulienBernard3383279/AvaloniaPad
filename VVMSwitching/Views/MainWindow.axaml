@@ -17,7 +17,9 @@
     </Design.DataContext>
 
   <Window.Resources>
-    <ControlTemplate x:Key="TransientState"/>
+    <ControlTemplate x:Key="TransientState">
+      <TextBlock Text=""/>
+    </ControlTemplate>
     
     <ControlTemplate x:Key="Choice0Template">
       <TextBlock Text="{Binding PropertyA}"/>
