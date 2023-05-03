@@ -44,24 +44,6 @@
             </ContentControl.Style>
         </ContentControl>
 
-        <TextBlock Text="Initial">
-            <TextBlock.Style>
-                <Style TargetType="{x:Type TextBlock}">
-                    <Style.Triggers>
-                        <DataTrigger Binding="{Binding ElementName=TheWindow, Path=DataContext.Choice}" Value="-1">
-                            <Setter Property="Text" Value="Transient"/>
-                        </DataTrigger>
-                        <DataTrigger Binding="{Binding ElementName=TheWindow, Path=DataContext.Choice}" Value="0">
-                            <Setter Property="Text" Value="Choice 0"/>
-                        </DataTrigger>
-                        <DataTrigger Binding="{Binding ElementName=TheWindow, Path=DataContext.Choice}" Value="1">
-                            <Setter Property="Text" Value="Choice 1"/>
-                        </DataTrigger>
-                    </Style.Triggers>
-                </Style>
-            </TextBlock.Style>
-        </TextBlock>
-        
         <Button Content="Change" Command="{Binding Change}"/>
 
     </StackPanel>
