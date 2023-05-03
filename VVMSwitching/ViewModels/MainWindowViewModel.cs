@@ -4,8 +4,6 @@ namespace VVMSwitching.ViewModels
 {
     public partial class MainWindowViewModel : ViewModelBase
     {
-        public string Greeting => "Welcome to Avalonia!";
-
         [ObservableProperty]
         private int _choice = 0;
 
