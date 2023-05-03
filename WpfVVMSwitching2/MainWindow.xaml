@@ -26,7 +26,7 @@
 
     <StackPanel Orientation="Vertical">
 
-        <ContentControl Name="MyContentControl" Template="{StaticResource Choice0Template}" DataContext="{Binding SubViewModel}">
+        <ContentControl Name="MyContentControl" DataContext="{Binding SubViewModel}">
             <ContentControl.Style>
                 <Style TargetType="{x:Type ContentControl}">
                     <Style.Triggers>

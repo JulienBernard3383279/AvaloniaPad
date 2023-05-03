@@ -43,7 +43,7 @@
       </ia:DataTriggerBehavior>
     </i:Interaction.Behaviors>
 
-    <ContentControl Name="MyContentControl" Template="{StaticResource TransientState}" DataContext="{Binding SubViewModel}"/>
+    <ContentControl Name="MyContentControl" DataContext="{Binding SubViewModel}"/>
 
     <Button Content="Change" Command="{Binding Change}"/>
 

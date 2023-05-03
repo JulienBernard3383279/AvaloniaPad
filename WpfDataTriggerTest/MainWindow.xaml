@@ -13,7 +13,7 @@
     </Window.DataContext>
     
     <StackPanel Orientation="Vertical">
-        <TextBlock Text="Initial">
+        <TextBlock>
             <TextBlock.Style>
                 <Style TargetType="{x:Type TextBlock}">
                     <Style.Triggers>
@@ -27,7 +27,7 @@
                 </Style>
             </TextBlock.Style>
         </TextBlock>
-
+        <TextBlock Text="{Binding Choice}"/>
         <Button Content="Change" Command="{Binding Change}"/>
     </StackPanel>
 </Window>
