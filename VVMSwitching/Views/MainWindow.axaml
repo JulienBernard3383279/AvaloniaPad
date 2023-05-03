@@ -16,34 +16,9 @@
         <vm:MainWindowViewModel/>
     </Design.DataContext>
 
-  <Window.Resources>
-    <ControlTemplate x:Key="TransientState">
-      <TextBlock Text=""/>
-    </ControlTemplate>
-    
-    <ControlTemplate x:Key="Choice0Template">
-      <TextBlock Text="{Binding PropertyA}"/>
-    </ControlTemplate>
-    <ControlTemplate x:Key="Choice1Template">
-      <Button Content="{Binding PropertyB}"/>
-    </ControlTemplate>
-  </Window.Resources>
-
   <StackPanel Orientation="Vertical">
 
-    <i:Interaction.Behaviors>
-      <ia:DataTriggerBehavior Binding="{Binding Choice}" ComparisonCondition="Equal" Value="-1">
-        <ia:ChangePropertyAction TargetObject="{Binding #MyContentControl}" PropertyName="Template" Value="{StaticResource TransientState}"/>
-      </ia:DataTriggerBehavior>
-      <ia:DataTriggerBehavior Binding="{Binding Choice}" ComparisonCondition="Equal" Value="0">
-        <ia:ChangePropertyAction TargetObject="{Binding #MyContentControl}" PropertyName="Template" Value="{StaticResource Choice0Template}"/>
-      </ia:DataTriggerBehavior>
-      <ia:DataTriggerBehavior Binding="{Binding Choice}" ComparisonCondition="Equal" Value="1">
-        <ia:ChangePropertyAction TargetObject="{Binding #MyContentControl}" PropertyName="Template" Value="{StaticResource Choice1Template}"/>
-      </ia:DataTriggerBehavior>
-    </i:Interaction.Behaviors>
-
-    <ContentControl Name="MyContentControl" DataContext="{Binding SubViewModel}"/>
+    <ContentControl Name="MyContentControl" Content="{Binding SubViewModel}"/>
 
     <Button Content="Change" Command="{Binding Change}"/>
 
