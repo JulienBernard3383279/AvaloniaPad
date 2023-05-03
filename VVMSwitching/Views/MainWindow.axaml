@@ -17,28 +17,32 @@
     </Design.DataContext>
 
   <Window.Resources>
-    <ControlTemplate x:Key="View1Template">
-      <TextBlock Text="Hello"/>
+    <ControlTemplate x:Key="TransientState">
     </ControlTemplate>
-    <ControlTemplate x:Key="View2Template">
-      <TextBlock Text="Hi"/>
+    
+    <ControlTemplate x:Key="Choice0Template">
+      <TextBlock Text="{Binding PropertyA}"/>
+    </ControlTemplate>
+    <ControlTemplate x:Key="Choice1Template">
+      <Button Content="{Binding PropertyB}"/>
     </ControlTemplate>
   </Window.Resources>
   
   <Grid RowDefinitions="*,5*,*">
-    
-    <ContentControl Name="MyContentControl" Grid.Row="0" Template="{StaticResource View1Template}">
 
-      <i:Interaction.Behaviors>
-        <ia:DataTriggerBehavior Binding="{Binding #slider.Value}" ComparisonCondition="GreaterThan" Value="50">
-          <ia:ChangePropertyAction TargetObject="{Binding #MyContentControl}" PropertyName="Template" Value="{StaticResource View1Template}"/>
-        </ia:DataTriggerBehavior>
-        <ia:DataTriggerBehavior Binding="{Binding #slider.Value}" ComparisonCondition="LessThanOrEqual" Value="50">
-          <ia:ChangePropertyAction TargetObject="{Binding #MyContentControl}" PropertyName="Template" Value="{StaticResource View2Template}"/>
-        </ia:DataTriggerBehavior>
-      </i:Interaction.Behaviors>
-      
-    </ContentControl>
+    <i:Interaction.Behaviors>
+      <ia:DataTriggerBehavior Binding="{Binding Choice}" ComparisonCondition="Equal" Value="-1">
+        <ia:ChangePropertyAction TargetObject="{Binding #MyContentControl}" PropertyName="Template" Value="{StaticResource TransientState}"/>
+      </ia:DataTriggerBehavior>
+      <ia:DataTriggerBehavior Binding="{Binding Choice}" ComparisonCondition="Equal" Value="0">
+        <ia:ChangePropertyAction TargetObject="{Binding #MyContentControl}" PropertyName="Template" Value="{StaticResource Choice0Template}"/>
+      </ia:DataTriggerBehavior>
+      <ia:DataTriggerBehavior Binding="{Binding Choice}" ComparisonCondition="Equal" Value="1">
+        <ia:ChangePropertyAction TargetObject="{Binding #MyContentControl}" PropertyName="Template" Value="{StaticResource Choice1Template}"/>
+      </ia:DataTriggerBehavior>
+    </i:Interaction.Behaviors>
+    
+    <ContentControl Name="MyContentControl" Grid.Row="0" Template="{StaticResource TransientState}" DataContext="{Binding SubViewModel}"/>
     
     <Rectangle Name="DataTriggerRectangle" Grid.Row="1" Margin="5" Fill="Blue" Stroke="Gray" StrokeThickness="5">
       <i:Interaction.Behaviors>
@@ -52,7 +56,7 @@
     </Rectangle>
     
     <StackPanel Grid.Row="2" Margin="5,0,5,5" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-      <!--Button Content="Change" Command="{Binding Change}"/-->
+      <Button Content="Change" Command="{Binding Change}"/>
       <TextBlock Text="{Binding #slider.Value}" VerticalAlignment="Center" Width="50" Foreground="Gray"/>
       <Slider Name="slider" Width="200" IsSnapToTickEnabled="True" TickFrequency="1"/>
     </StackPanel>
