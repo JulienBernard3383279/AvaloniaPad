@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvaloniaPad", "AvaloniaPad\AvaloniaPad.csproj", "{A8EF7527-7D05-4166-A72A-D3E7F9AC2F9A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AvaloniaPad", "AvaloniaPad\AvaloniaPad.csproj", "{A8EF7527-7D05-4166-A72A-D3E7F9AC2F9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StylesTests", "StylesTests\StylesTests.csproj", "{4E2857E4-B75A-4EE5-824D-48168BEDD716}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VVMSwitching", "VVMSwitching\VVMSwitching.csproj", "{76CC3CC8-62CF-45CB-8283-55D5C4FB7493}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{A8EF7527-7D05-4166-A72A-D3E7F9AC2F9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A8EF7527-7D05-4166-A72A-D3E7F9AC2F9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A8EF7527-7D05-4166-A72A-D3E7F9AC2F9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E2857E4-B75A-4EE5-824D-48168BEDD716}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E2857E4-B75A-4EE5-824D-48168BEDD716}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E2857E4-B75A-4EE5-824D-48168BEDD716}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E2857E4-B75A-4EE5-824D-48168BEDD716}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76CC3CC8-62CF-45CB-8283-55D5C4FB7493}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76CC3CC8-62CF-45CB-8283-55D5C4FB7493}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76CC3CC8-62CF-45CB-8283-55D5C4FB7493}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76CC3CC8-62CF-45CB-8283-55D5C4FB7493}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
